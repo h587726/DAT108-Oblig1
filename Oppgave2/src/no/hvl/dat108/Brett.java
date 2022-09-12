@@ -1,5 +1,7 @@
 package no.hvl.dat108;
 
+import java.util.Arrays;
+
 public class Brett {
 
     private final int KAPASITET;
@@ -22,14 +24,9 @@ public class Brett {
             brett[teller] = hamburger;
             teller++;
 
-            System.out.print(Thread.currentThread().getName() + " legger på hamburger [" + hamburger.getId() + "]. ");
-        for (int i = 0; i < KAPASITET; i++) {
-            if(brett[i]!=null) {
-                System.out.println("Brett: [" + brett[i].getId() + "]");
-            }
-        }
+            System.out.println(Thread.currentThread().getName() + " legger på hamburger [" + hamburger + "]. " + "Brett: ["+ Arrays.toString(brett) + " ]");
 
-        notify();
+
     }
 
     public synchronized Hamburger hentHamburger() throws InterruptedException{
@@ -48,14 +45,8 @@ public class Brett {
         }
         brett[teller] = null;
 
-        System.out.print(Thread.currentThread().getName() + " tar av hamburger " + hamburger.getId() + ". ");
-        for (int i = 0; i < KAPASITET; i++) {
-            if(brett[i]!=null) {
-                System.out.println("Brett: [" + brett[i].getId() + "]");
-            }
+        System.out.print(Thread.currentThread().getName() + " tar av hamburger " + hamburger + ". ");
 
-            notify();
-        }
 
         return hamburger;
     }
