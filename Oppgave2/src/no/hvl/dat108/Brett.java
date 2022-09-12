@@ -28,6 +28,8 @@ public class Brett {
                 System.out.println("Brett: [" + brett[i].getId() + "]");
             }
         }
+
+        notify();
     }
 
     public synchronized Hamburger hentHamburger() throws InterruptedException{
@@ -51,6 +53,8 @@ public class Brett {
             if(brett[i]!=null) {
                 System.out.println("Brett: [" + brett[i].getId() + "]");
             }
+
+            notify();
         }
 
         return hamburger;
