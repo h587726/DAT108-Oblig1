@@ -24,7 +24,7 @@ public class Brett {
             brett[teller] = hamburger;
             teller++;
 
-            System.out.println(Thread.currentThread().getName() + " legger på hamburger [" + hamburger + "]. " + "Brett: ["+ Arrays.toString(brett) + " ]");
+            System.out.println(Thread.currentThread().getName() + " legger på hamburger [" + hamburger + "]. " + "Brett: [" + " ]");
 
 
     }
