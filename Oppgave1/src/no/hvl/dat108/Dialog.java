@@ -1,4 +1,4 @@
-package dat108;
+package no.hvl.dat108;
 
 import javax.swing.*;
 
