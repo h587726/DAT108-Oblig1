@@ -6,6 +6,10 @@ public class Hamburger {
     private static int nummer = 1;
 
     public Hamburger(){
+        synchronized (Hamburger.class){
+            id = nummer;
+            nummer++;
+        }
         this.id = nummer++;
     }
 

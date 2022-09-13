@@ -16,6 +16,7 @@ public class Kokk extends Thread{
 
     public void run() {
 
+        Thread.currentThread().setName(navn);
         while(true){
 
             try {

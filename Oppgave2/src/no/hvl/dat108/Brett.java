@@ -23,8 +23,9 @@ public class Brett {
 
             brett[teller] = hamburger;
             teller++;
+            notifyAll();
 
-            System.out.println(Thread.currentThread().getName() + " legger på hamburger [" + hamburger + "]. " + "Brett: [" + " ]");
+            System.out.println(Thread.currentThread().getName() + " legger på hamburger [" + hamburger + "]. " + "Brett: [" + burgerPaBrett() + " ] \n");
 
 
     }
@@ -45,7 +46,8 @@ public class Brett {
         }
         brett[teller] = null;
 
-        System.out.print(Thread.currentThread().getName() + " tar av hamburger " + hamburger + ". ");
+        System.out.print(Thread.currentThread().getName() + " tar av hamburger " + hamburger.getId() + ". " + "Brett: [" + burgerPaBrett() + " ] \n");
+        notifyAll();
 
 
         return hamburger;
@@ -59,5 +61,18 @@ public class Brett {
     public boolean erTom() {
 
         return brett[0] == null;
+    }
+
+    public String burgerPaBrett(){
+
+        String s = "";
+
+        for (Hamburger hamburger : brett) {
+            if(hamburger != null) {
+                s = s + "( " + hamburger.getId() + " ) ";
+            }
+        }
+
+        return s;
     }
 }
